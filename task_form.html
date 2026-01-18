@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task</title>
+<style>
+body { font-family: Arial; background:#f4f6f9; padding:40px; }
+.card { background:white; padding:30px; max-width:500px; margin:auto; border-radius:12px; box-shadow:0 10px 20px rgba(0,0,0,.1); }
+button { width:100%; padding:10px; background:#16a34a; color:white; border:none; border-radius:6px; }
+a { display:block; margin-top:12px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Task</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<a href="{% url 'task_list' %}">Cancel</a>
+</div>
+</body>
+</html>

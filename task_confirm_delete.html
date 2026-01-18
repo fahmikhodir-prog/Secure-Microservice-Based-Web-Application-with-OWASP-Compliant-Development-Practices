@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Delete Task</title>
+<style>
+body { font-family: Arial; background:#f4f6f9; padding:40px; }
+.card { background:white; padding:30px; max-width:400px; margin:auto; border-radius:12px; box-shadow:0 10px 20px rgba(0,0,0,.1); text-align:center; }
+button { width:100%; padding:10px; background:#ef4444; color:white; border:none; border-radius:6px; }
+a { display:block; margin-top:12px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Delete Task</h2>
+<p>Are you sure you want to delete <strong>{{ task.title }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+</form>
+
+<a href="{% url 'task_list' %}">Cancel</a>
+</div>
+</body>
+</html>
